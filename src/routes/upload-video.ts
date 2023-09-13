@@ -39,5 +39,7 @@ export async function uploadVideoRoute(app: FastifyInstance) {
     );
 
     await pump(data.file, fs.createWriteStream(uploadDestination));
+
+    return reply.send();
   });
 }
